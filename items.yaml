@@ -29,7 +29,7 @@ items:
             javaOptions: -Xms${controllerHeapSize} -Xmx${controllerHeapSize}
         properties:
           - configurationAsCode:
-              bundle: default-2.332.2
+              bundle: default-2.332.2-standby-instances
       - kind: managedController
         displayName: "CloudBees CI - 2.332.1"
         description: 'Controller running the March 2022 release from CloudBees'
