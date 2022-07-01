@@ -55,3 +55,20 @@ masterProvisioning:
     cpus: "2.0"
     disk: "50"
     memory: "${controllerMemory}"
+    envVars: |-
+      SECRETS=/run/secrets/casc-secrets-mc
+    yaml: |-
+      apiVersion: "apps/v1"
+      kind: "StatefulSet"
+      spec:
+        template:
+          spec:
+            containers:
+            - name: "jenkins"
+              volumeMounts:
+                - mountPath: "/run/secrets/casc-secrets-mc"
+                  name: "casc-secrets-mc-volume"
+            volumes:
+            - name: casc-secrets-mc-volume
+              secret:
+                secretName: casc-secrets-mc

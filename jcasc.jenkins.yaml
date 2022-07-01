@@ -74,7 +74,7 @@ unclassified:
           defaultVersion: "main"
           scmSource:
             git:
-              remote: "https://github.com/ryecarrigan/cbci-casc-bundles.git"
+              remote: "https://github.com/sboardwell/cbci-casc-bundles.git"
               traits:
                 - "gitBranchDiscovery"
     pollingPeriod: 120
@@ -100,14 +100,6 @@ credentials:
   system:
     domainCredentials:
       - credentials:
-          - basicSSHUserPrivateKey:
-              id: "github-key"
-              privateKeySource:
-                directEntry:
-                  privateKey: ${githubKey}
-              scope: GLOBAL
-              username: "github-key"
-              usernameSecret: true
           - string:
               id: "github-token"
               scope: GLOBAL
